@@ -1,0 +1,15 @@
+# docker-compose.yml
+version: "3.9"  # optional since v1.27.0
+services:
+  message-server:
+    container_name: spring-boot-tutorial
+    build:
+      context: spring-boot-tutorial-server
+      dockerfile: Dockerfile
+    image: https://github.com/janick3110/Webengineering-Backend.git
+    ports:
+      - 18888:8888
+    restart: unless-stopped
+
+volumes:
+  logvolume01: {}
